@@ -1,8 +1,7 @@
-const tailwindcss = require('tailwindcss');
 const purgecss = require('@fullhuman/postcss-purgecss');
 
 const isProd = process.env.NODE_ENV === 'production';
-const plugins = [tailwindcss('./tailwind.js'), require('autoprefixer')];
+const plugins = [require('postcss-easy-import'), require('tailwindcss'), require('autoprefixer')];
 
 if (isProd) {
   plugins.push(
